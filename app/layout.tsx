@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
+import themeConfig from '@/lib/antd/themeConfig';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
+import { ConfigProvider } from 'antd';
+import type { Metadata } from "next";
 import "./globals.css";
 
 
@@ -19,9 +21,11 @@ export default function RootLayout({
       <body
         className="antialiased"
       >
-        <AntdRegistry>
-          {children}
-        </AntdRegistry>
+        <ConfigProvider theme={themeConfig}>
+          <AntdRegistry>
+            {children}
+          </AntdRegistry>
+        </ConfigProvider>
       </body>
     </html>
   );
