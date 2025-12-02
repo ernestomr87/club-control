@@ -6,6 +6,7 @@ import {
   ShopOutlined,
   CalendarOutlined,
 } from '@ant-design/icons';
+import Link from 'next/link';
 
 export const MENU_ITEMS = [
   {
@@ -14,24 +15,29 @@ export const MENU_ITEMS = [
     label: 'Dashboard',
   },
   {
-    key: '/dashboard/clubs',
-    icon: <ShopOutlined />,
-    label: 'Clubs',
+    key: 'students',
+    icon: <TeamOutlined />, // Icono de grupo para alumnos
+    label: <Link href="/students">Alumnos</Link>,
   },
   {
-    key: '/dashboard/users',
-    icon: <TeamOutlined />,
-    label: 'Users',
+    key: 'staff',
+    icon: <UserOutlined />, // Icono individual para profes
+    label: <Link href="/staff">Profesores</Link>,
   },
   {
-    key: '/dashboard/calendar',
+    key: 'facilities',
+    icon: <ShopOutlined />, // Icono de grupo para clubs
+    label: <Link href="/facilities">Instalaciones</Link>,
+  },
+  {
+    key: 'calendar',
     icon: <CalendarOutlined />,
-    label: 'Calendar',
+    label: <Link href="/calendar">Calendario</Link>,
   },
   {
-    key: '/dashboard/settings',
+    key: 'settings',
     icon: <SettingOutlined />,
-    label: 'Settings',
+    label: <Link href="/settings">Configuración</Link>,
   },
 ];
 

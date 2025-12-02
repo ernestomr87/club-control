@@ -28,7 +28,7 @@ const DashboardLayoutCmp = ({ children }: { children: React.ReactNode }) => {
         },
       }}
     >
-      <Layout style={{ minHeight: '100vh' }}>
+      <Layout style={{ minHeight: '100vh' }} hasSider>
         <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} />
         <Layout
           style={{

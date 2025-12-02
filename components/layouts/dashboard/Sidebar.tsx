@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Layout, Menu, theme } from 'antd';
-import { usePathname, useRouter } from 'next/navigation';
-import { MENU_ITEMS } from './constants';
+import React from "react";
+import { Layout, Menu, theme } from "antd";
+import { usePathname, useRouter } from "next/navigation";
+import { MENU_ITEMS } from "./constants";
 
 const { Sider } = Layout;
 
@@ -27,15 +27,19 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, setCollapsed }) => {
       className="shadow-xl z-10"
       style={{
         background: colorBgContainer,
-        height: '100vh',
-        position: 'sticky',
+        height: "100vh",
+        position: "sticky",
         top: 0,
         left: 0,
       }}
       width={260}
     >
       <div className="flex items-center justify-center h-16 border-b border-gray-100">
-        <div className={`font-bold text-xl transition-all duration-300 ${collapsed ? 'scale-0 w-0' : 'scale-100'}`}>
+        <div
+          className={`font-bold text-xl transition-all duration-300 ${
+            collapsed ? "scale-0 w-0" : "scale-100"
+          }`}
+        >
           <span className="text-blue-600">Club</span>Control
         </div>
         {collapsed && <div className="text-blue-600 font-bold text-xl">CC</div>}
@@ -46,7 +50,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, setCollapsed }) => {
         items={MENU_ITEMS}
         onClick={({ key }) => router.push(key)}
         className="border-none mt-4"
-        style={{ background: 'transparent' }}
+        style={{ background: "transparent", height: "100%", borderRight: 0 }}
       />
     </Sider>
   );
